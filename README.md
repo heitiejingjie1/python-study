@@ -1,2 +1,2 @@
-# study
+# python study
 studying
