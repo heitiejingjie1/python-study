@@ -23,6 +23,32 @@ else:
     for car in cars:
         print(car.title())
 
+"""模式匹配"""
+score = 79
+match score:
+    case x if x < 60:
+        print("score is D")
+    case x if 60 <= x < 80:
+        print("score is C")
+    case x if 80 <= x < 90:
+        print("score is B")
+    case x if x >= 90:
+        print("score is A")
+    case _:
+        print("score is unknown")
+
+# 匹配列表
+args = ["gcc", "hello.c", "-o", "hello"]
+
+match args:
+    case ["gcc"]:
+        print("gcc: missing source files")
+    case ["gcc", file, *file2]:
+        print(f"gcc complice: {file} " + " ".join(file2))
+    case ["clean"]:
+        print("clean: clean all files")
+    case _:
+        print("invalid command")
 # 练习
 users = ["admim", "alice", "bob", "charlie"]
 users = []
